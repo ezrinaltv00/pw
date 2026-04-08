@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+
+    <style>
+        :root {
+            /* 60% - warna utama (soft pastel) */
+            --primary: #FDE2E4;
+
+            /* 30% - warna sekunder */
+            --secondary: #CDB4DB;
+
+            /* 10% - warna aksen */
+            --accent: #FF6B6B;
+
+            --text: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: var(--primary);
+            color: var(--text);
+        }
+
+        header {
+            background: var(--secondary);
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Golden ratio layout */
+        .container {
+            display: grid;
+            grid-template-columns: 1.618fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .main {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .sidebar {
+            background: var(--secondary);
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .project {
+            background: var(--primary);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 5px solid var(--accent);
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: var(--secondary);
+            color: white;
+            margin-top: 20px;
+        }
+
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        @media(max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Portofolio Saya</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Tentang</a>
+        <a href="#">Proyek</a>
+        <a href="#">Kontak</a>
+    </nav>
+</header>
+
+<div class="container">
+    
+    <!-- Main Content (Golden Ratio 1.618) -->
+    <div class="main">
+        <section>
+            <h2>Tentang Saya</h2>
+            <p>Saya adalah mahasiswa Informatika yang tertarik pada pengembangan aplikasi dan desain sistem.</p>
+        </section>
+
+        <section>
+            <h2>Proyek</h2>
+
+            <div class="project">
+                <h3>MedMinder</h3>
+                <p>Aplikasi CLI Python untuk monitoring konsumsi obat berbasis QR Code.</p>
+            </div>
+
+            <div class="project">
+                <h3>Sistem Wishlist</h3>
+                <p>Aplikasi tracking wishlist dengan fitur barcode dan ekspor Excel.</p>
+            </div>
+
+        </section>
+
+        <button>Hubungi Saya</button>
+    </div>
+
+    <!-- Sidebar (Golden Ratio 1) -->
+    <div class="sidebar">
+        <h2>Info</h2>
+        <p><strong>Nama:</strong> Nama Kamu</p>
+        <p><strong>Email:</strong> email@email.com</p>
+        <p><strong>Skill:</strong></p>
+        <ul>
+            <li>Python</li>
+            <li>HTML & CSS</li>
+            <li>Microsoft Office</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Portofolio Saya</p>
+</footer>
+
+</body>
+</html>
