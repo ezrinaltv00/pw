@@ -40,13 +40,13 @@ header {
     min-height: 90vh;
 }
 
-/* KIRI - PORTOFOLIO */
+/* KIRI */
 .main {
     padding: 35px;
-    background: var(--primary);
     border-right: 3px solid var(--accent);
 }
 
+/* SECTION */
 .section {
     margin-bottom: 30px;
 }
@@ -56,21 +56,26 @@ header {
     margin-bottom: 10px;
 }
 
-/* PROJECT CARD */
-.project {
+/* PORTOFOLIO GRID */
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 */
+    gap: 15px;
+}
+
+.card {
     background: white;
     padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 12px;
+    border-radius: 12px;
     transition: 0.3s;
     border-left: 5px solid var(--accent);
 }
 
-.project:hover {
-    transform: translateX(5px);
+.card:hover {
+    transform: translateY(-5px);
 }
 
-/* KANAN - BIODATA (SPOTLIGHT) */
+/* KANAN */
 .sidebar {
     background: var(--secondary);
     padding: 25px;
@@ -79,33 +84,29 @@ header {
     justify-content: center;
 }
 
-/* GRID BIODATA */
+/* BIODATA */
 .team {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 20px;
 }
 
-/* CARD BIODATA */
 .member {
     background: white;
     padding: 15px;
     border-radius: 15px;
     text-align: center;
-    transition: 0.3s;
     box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
 .member:hover {
     transform: scale(1.03);
 }
 
-/* FOTO */
 .member img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    object-fit: cover;
     margin-bottom: 10px;
     border: 3px solid var(--accent);
 }
@@ -128,6 +129,10 @@ header {
         border-right: none;
         border-bottom: 3px solid var(--accent);
     }
+
+    .portfolio {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 </head>
@@ -140,37 +145,48 @@ header {
 
 <div class="container">
 
-    <!-- KIRI (PORTOFOLIO) -->
+    <!-- KIRI -->
     <div class="main">
 
+        <!-- TENTANG -->
         <div class="section">
             <h2>Tentang Kami</h2>
-            <p>Kami adalah tim mahasiswa informatika yang sedang mengembangkan berbagai proyek berbasis sistem dan pemrograman.</p>
+            <p>Kami adalah tim mahasiswa informatika yang berfokus pada pengembangan sistem dan solusi digital sederhana.</p>
         </div>
 
+        <!-- PORTOFOLIO -->
         <div class="section">
-            <h2>Yang Sedang Dikerjakan</h2>
+            <h2>Portofolio</h2>
 
-            <div class="project">
-                <strong>Sistem Manajemen Data</strong>
-                <p>Mengelola data secara terstruktur dan efisien.</p>
-            </div>
+            <div class="portfolio">
 
-            <div class="project">
-                <strong>Aplikasi Monitoring</strong>
-                <p>Pencatatan aktivitas dengan fitur laporan sederhana.</p>
-            </div>
+                <div class="card">
+                    <strong>Project 1</strong>
+                    <p>Aplikasi berbasis sistem data.</p>
+                </div>
 
-            <div class="project">
-                <strong>Website Portfolio</strong>
-                <p>Menampilkan profil dan hasil kerja tim.</p>
+                <div class="card">
+                    <strong>Project 2</strong>
+                    <p>Sistem monitoring aktivitas.</p>
+                </div>
+
+                <div class="card">
+                    <strong>Project 3</strong>
+                    <p>Website sederhana.</p>
+                </div>
+
+                <div class="card">
+                    <strong>Project 4</strong>
+                    <p>Program CLI berbasis Python.</p>
+                </div>
+
             </div>
 
         </div>
 
     </div>
 
-    <!-- KANAN (BIODATA - FOKUS) -->
+    <!-- KANAN -->
     <div class="sidebar">
 
         <div class="team">
@@ -179,28 +195,24 @@ header {
                 <img src="https://via.placeholder.com/80">
                 <h4>Nama 1</h4>
                 <p>Frontend</p>
-                <p>email@email.com</p>
             </div>
 
             <div class="member">
                 <img src="https://via.placeholder.com/80">
                 <h4>Nama 2</h4>
                 <p>Backend</p>
-                <p>email@email.com</p>
             </div>
 
             <div class="member">
                 <img src="https://via.placeholder.com/80">
                 <h4>Nama 3</h4>
                 <p>Database</p>
-                <p>email@email.com</p>
             </div>
 
             <div class="member">
                 <img src="https://via.placeholder.com/80">
                 <h4>Nama 4</h4>
                 <p>UI/UX</p>
-                <p>email@email.com</p>
             </div>
 
         </div>
