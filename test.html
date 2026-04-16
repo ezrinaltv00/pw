@@ -39,6 +39,7 @@ z-index:999;
 nav a{color:var(--text);text-decoration:none;font-weight:500;}
 nav i{color:var(--accent);}
 
+/* SCROLL FIX */
 .section{scroll-margin-top:80px;}
 
 /* FLOATING */
@@ -49,7 +50,6 @@ opacity:0.22;
 text-shadow:0 0 10px rgba(63,174,124,0.4);
 animation:float 6s infinite ease-in-out;
 }
-
 .floating i:nth-child(1){top:5%;left:5%;font-size:40px;}
 .floating i:nth-child(2){top:20%;left:15%;font-size:30px;}
 .floating i:nth-child(3){top:40%;left:8%;font-size:35px;}
@@ -76,8 +76,18 @@ header h1{color:var(--accent);}
 .main{padding:40px;border-right:2px solid var(--accent);}
 
 /* TEAM */
-.team-photo{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:30px;text-align:center;}
-.member img{width:80px;height:80px;border-radius:50%;border:2px solid var(--accent);}
+.team-photo{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:30px;
+text-align:center;
+}
+.member img{
+width:80px;height:80px;
+border-radius:50%;
+border:2px solid var(--accent);
+}
 
 /* SECTION */
 .section{margin-bottom:35px;}
@@ -132,7 +142,6 @@ padding:50px;
 background:var(--secondary);
 border-top:3px solid var(--accent);
 }
-
 .extra-box{
 background:white;
 padding:20px;
@@ -145,7 +154,6 @@ transition:0.3s;
 transform:translateY(-8px);
 box-shadow:0 10px 20px rgba(63,174,124,0.25);
 }
-
 .divider{
 height:2px;
 background:var(--accent);
@@ -205,6 +213,7 @@ border-top:2px solid var(--accent);
 <a href="#portfolio"><i class="fa-solid fa-briefcase-medical"></i> Portofolio</a>
 </nav>
 
+<!-- FLOATING -->
 <div class="floating">
 <i class="fa-solid fa-heart-pulse"></i>
 <i class="fa-solid fa-pills"></i>
@@ -282,11 +291,35 @@ medminder@mail.com
 
 </div>
 
+<!-- BAGIAN BAWAH -->
 <div class="extra">
-<h2>Informasi Tambahan</h2>
+
+<h2><i class="fa-solid fa-notes-medical"></i> Informasi Tambahan</h2>
 <div class="extra-box">
-MedMinder membantu monitoring obat secara efisien.
+<p>
+MedMinder merupakan aplikasi yang membantu pengguna dalam mengatur jadwal konsumsi obat secara otomatis dan terstruktur, sehingga dapat mengurangi risiko lupa serta meningkatkan efektivitas penggunaan obat.
+</p>
 </div>
+
+<div class="divider"></div>
+
+<h2><i class="fa-solid fa-capsules"></i> Fitur Utama</h2>
+<div class="extra-box">
+<p><i class="fa-solid fa-barcode"></i> Login menggunakan QR Code</p>
+<p><i class="fa-solid fa-clock"></i> Penjadwalan otomatis</p>
+<p><i class="fa-solid fa-check-circle"></i> Monitoring konsumsi harian</p>
+<p><i class="fa-solid fa-file-excel"></i> Export data ke Excel</p>
+</div>
+
+<div class="divider"></div>
+
+<h2><i class="fa-solid fa-star"></i> Keunggulan</h2>
+<div class="extra-box">
+<p><i class="fa-solid fa-circle-check"></i> Mudah digunakan</p>
+<p><i class="fa-solid fa-circle-check"></i> Sistem efisien</p>
+<p><i class="fa-solid fa-circle-check"></i> Membantu disiplin kesehatan</p>
+</div>
+
 </div>
 
 <!-- POPUP -->
@@ -303,7 +336,7 @@ MedMinder membantu monitoring obat secara efisien.
 </div>
 
 <footer>
-MedMinder 2026
+<i class="fa-solid fa-heart-pulse"></i> MedMinder 2026
 </footer>
 
 <script>
