@@ -39,6 +39,9 @@ z-index:999;
 nav a{color:var(--text);text-decoration:none;font-weight:500;}
 nav i{color:var(--accent);}
 
+/* SCROLL FIX */
+.section{scroll-margin-top:80px;}
+
 /* FLOATING */
 .floating i{
 position:absolute;
@@ -65,7 +68,7 @@ header h1{color:var(--accent);}
 .section{margin-bottom:35px;}
 .section h2{color:var(--accent);}
 
-/* ABOUT */
+/* ABOUT (DIPENDEKIN) */
 .about-text{
 background:white;
 padding:15px;
@@ -80,6 +83,7 @@ background:white;
 padding:20px;
 border-radius:12px;
 border:1.5px solid var(--accent);
+cursor:pointer;
 margin-bottom:15px;
 display:flex;
 gap:10px;
@@ -94,17 +98,18 @@ display:flex;
 flex-direction:column;
 gap:15px;
 }
-.side-card{
+.side-card,.mini-box{
 background:white;
 padding:12px;
 border-radius:10px;
 border:1px solid var(--accent);
 }
 
-/* EXTRA */
+/* EXTRA (DIBIKIN RAMAI) */
 .extra{
 padding:50px;
 background:var(--secondary);
+line-height:1.9;
 border-top:3px solid var(--accent);
 }
 
@@ -113,19 +118,19 @@ color:var(--accent);
 margin-top:30px;
 }
 
+.extra i{
+color:var(--accent);
+margin-right:6px;
+}
+
+/* BOX BIAR GA SEPI */
 .extra-box{
 background:white;
 padding:20px;
 border-radius:12px;
 border:1px solid var(--accent);
 margin-top:15px;
-transition:0.3s;
-}
-
-/* HOVER EFFECT */
-.extra-box:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 20px rgba(63,174,124,0.25);
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
 /* DIVIDER */
@@ -136,33 +141,6 @@ margin:25px 0;
 opacity:0.3;
 }
 
-/* STATS */
-.stats{
-display:flex;
-justify-content:space-around;
-margin-top:15px;
-text-align:center;
-}
-.stats div{
-background:white;
-padding:10px;
-border-radius:10px;
-border:1px solid var(--accent);
-}
-
-/* PROGRESS */
-.progress{
-background:#ddd;
-border-radius:20px;
-overflow:hidden;
-margin-top:10px;
-}
-.progress-bar{
-height:8px;
-background:var(--accent);
-width:80%;
-}
-
 /* FOOTER */
 footer{
 text-align:center;
@@ -171,6 +149,7 @@ background:var(--secondary);
 border-top:2px solid var(--accent);
 }
 
+/* RESPONSIVE */
 @media(max-width:768px){
 .container{grid-template-columns:1fr;}
 }
@@ -203,7 +182,8 @@ border-top:2px solid var(--accent);
 <div class="section" id="about">
 <h2><i class="fa-solid fa-users"></i> Tentang Kami</h2>
 <div class="about-text">
-Kami adalah tim mahasiswa informatika yang mengembangkan aplikasi kesehatan digital untuk membantu pengguna dalam mengelola konsumsi obat secara lebih teratur dan efisien.
+Kami adalah tim mahasiswa informatika yang mengembangkan aplikasi kesehatan digital untuk membantu pengguna dalam mengelola konsumsi obat secara lebih teratur dan efisien. 
+MedMinder dirancang agar mudah digunakan serta mampu membantu meningkatkan kedisiplinan dalam menjaga kesehatan sehari-hari.
 </div>
 </div>
 
@@ -227,40 +207,36 @@ Kami adalah tim mahasiswa informatika yang mengembangkan aplikasi kesehatan digi
 
 </div>
 
-<!-- BAGIAN BAWAH -->
+<!-- BAGIAN BAWAH (DI RAMAIIN) -->
 <div class="extra">
 
 <h2><i class="fa-solid fa-notes-medical"></i> Informasi Tambahan</h2>
+
 <div class="extra-box">
-<p>MedMinder membantu pengguna mengelola obat secara otomatis dan efisien.</p>
+<p>
+MedMinder merupakan aplikasi yang membantu pengguna dalam mengatur jadwal konsumsi obat secara otomatis dan terstruktur, sehingga dapat mengurangi risiko lupa serta meningkatkan efektivitas penggunaan obat.
+</p>
 </div>
 
 <div class="divider"></div>
 
-<h2><i class="fa-solid fa-capsules"></i> Fitur</h2>
+<h2><i class="fa-solid fa-capsules"></i> Fitur Utama</h2>
+
 <div class="extra-box">
-<p><i class="fa-solid fa-check-circle"></i> QR Login</p>
-<p><i class="fa-solid fa-check-circle"></i> Jadwal</p>
-<p><i class="fa-solid fa-check-circle"></i> Tracking</p>
+<p><i class="fa-solid fa-barcode"></i> Login menggunakan QR Code</p>
+<p><i class="fa-solid fa-clock"></i> Penjadwalan otomatis</p>
+<p><i class="fa-solid fa-check-circle"></i> Monitoring konsumsi harian</p>
+<p><i class="fa-solid fa-file-excel"></i> Export data ke Excel</p>
 </div>
 
 <div class="divider"></div>
 
-<h2><i class="fa-solid fa-chart-line"></i> Statistik</h2>
-<div class="stats">
-<div><b>4</b><br>Tim</div>
-<div><b>100%</b><br>Aktif</div>
-<div><b>24/7</b><br>Monitoring</div>
-</div>
+<h2><i class="fa-solid fa-star"></i> Keunggulan</h2>
 
-<div class="divider"></div>
-
-<h2><i class="fa-solid fa-tasks"></i> Progress</h2>
 <div class="extra-box">
-Backend
-<div class="progress"><div class="progress-bar"></div></div>
-Frontend
-<div class="progress"><div class="progress-bar" style="width:70%"></div></div>
+<p><i class="fa-solid fa-circle-check"></i> Mudah digunakan</p>
+<p><i class="fa-solid fa-circle-check"></i> Sistem efisien</p>
+<p><i class="fa-solid fa-circle-check"></i> Membantu disiplin kesehatan</p>
 </div>
 
 </div>
