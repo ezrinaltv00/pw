@@ -23,16 +23,17 @@ body {
     background: var(--primary);
     color: var(--text);
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 h1,h2,h3 {font-family:'Poppins',sans-serif;}
 
-/* ===== NAVBAR STICKY ===== */
+/* NAVBAR */
 nav {
     position: sticky;
     top: 0;
     background: white;
-    padding: 10px 20px;
+    padding: 12px;
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -46,9 +47,7 @@ nav a {
     font-weight: 500;
 }
 
-nav a:hover {
-    color: var(--accent);
-}
+nav a:hover {color: var(--accent);}
 
 /* FLOATING BACKGROUND */
 .floating i {
@@ -105,6 +104,8 @@ header h1 {color:var(--accent);}
     text-align:center;
 }
 
+.member:hover {transform:translateY(-5px);}
+
 .member img {
     width:75px;height:75px;
     border-radius:50%;
@@ -156,14 +157,20 @@ header h1 {color:var(--accent);}
     gap:15px;
 }
 
-.side-card, .mini-box {
+.side-card {
+    background:rgba(255,255,255,0.7);
+    padding:12px;
+    border-radius:10px;
+}
+
+.mini-box {
     background:white;
     padding:12px;
     border-radius:10px;
     border:1px solid var(--accent);
 }
 
-/* FLOATING BUTTON */
+/* FLOAT BUTTON */
 .float-btn {
     position: fixed;
     bottom: 20px;
@@ -237,7 +244,7 @@ footer {
 </div>
 
 <header>
-<h1>MedMinder</h1>
+<h1><i class="fa-solid fa-heart-pulse"></i> MedMinder</h1>
 <p>Monitoring Kesehatan Harian</p>
 </header>
 
@@ -253,14 +260,14 @@ footer {
 </div>
 
 <div class="section" id="about">
-<h2>Tentang Kami</h2>
+<h2><i class="fa-solid fa-users"></i> Tentang Kami</h2>
 <div class="about-text">
 Kami adalah tim mahasiswa informatika yang berfokus pada pengembangan aplikasi kesehatan digital.
 </div>
 </div>
 
 <div class="section" id="portfolio">
-<h2>Portofolio</h2>
+<h2><i class="fa-solid fa-briefcase-medical"></i> Portofolio</h2>
 
 <div class="project-main" onclick="openPopup()">
 <h3>MedMinder</h3>
@@ -281,9 +288,20 @@ Kami adalah tim mahasiswa informatika yang berfokus pada pengembangan aplikasi k
 <div class="sidebar">
 <div class="side-card">Kesehatan Digital</div>
 <div class="side-card">Manajemen Obat</div>
+<div class="side-card">Jadwal Otomatis</div>
+<div class="side-card">Tracking</div>
 
-<div class="mini-box">Tim: 4 Orang</div>
-<div class="mini-box">Status: Aktif</div>
+<div class="mini-box">
+<b>Project Info</b><br>
+Tim: 4 Orang<br>
+Status: Aktif
+</div>
+
+<div class="mini-box">
+<b>Kontak</b><br>
+medminder@mail.com<br>
+08xxxx
+</div>
 </div>
 
 </div>
