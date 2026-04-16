@@ -158,7 +158,10 @@ text-align:center;
 }
 
 /* EXTRA */
-.extra{padding:40px;line-height:1.8;}
+.extra{
+padding:40px;
+line-height:1.8;
+}
 
 /* FOOTER */
 footer{
@@ -167,6 +170,7 @@ padding:20px;
 background:var(--secondary);
 }
 
+/* RESPONSIVE */
 @media(max-width:768px){
 .container{grid-template-columns:1fr;}
 }
@@ -216,7 +220,7 @@ background:var(--secondary);
 <div class="section" id="about">
 <h2><i class="fa-solid fa-users"></i> Tentang Kami</h2>
 <div class="about-text">
-Kami adalah tim mahasiswa informatika yang mengembangkan aplikasi kesehatan digital.
+Kami adalah tim mahasiswa informatika yang mengembangkan aplikasi kesehatan digital untuk membantu pengelolaan konsumsi obat secara efisien.
 </div>
 </div>
 
@@ -262,10 +266,42 @@ medminder@mail.com
 
 </div>
 
+<!-- BAGIAN BAWAH PANJANG -->
 <div class="extra">
+
 <h2><i class="fa-solid fa-notes-medical"></i> Informasi Tambahan</h2>
-<p>Aplikasi ini membantu monitoring obat harian secara efisien.</p>
-<p>Dikembangkan dengan sistem berbasis CLI dan Excel.</p>
+
+<p>
+MedMinder merupakan aplikasi berbasis sistem yang dirancang untuk membantu pengguna dalam mengelola konsumsi obat secara teratur dan terstruktur.
+Dengan teknologi digital, pengguna dapat memantau jadwal dan riwayat konsumsi obat dengan mudah.
+</p>
+
+<p>
+Aplikasi ini juga menyediakan fitur ekspor data ke dalam format Excel untuk dokumentasi kesehatan.
+</p>
+
+<br>
+
+<h2><i class="fa-solid fa-capsules"></i> Fitur Utama</h2>
+<p><i class="fa-solid fa-barcode"></i> Scan QR untuk login</p>
+<p><i class="fa-solid fa-clock"></i> Penjadwalan otomatis</p>
+<p><i class="fa-solid fa-check-circle"></i> Tracking konsumsi</p>
+<p><i class="fa-solid fa-file-excel"></i> Export data</p>
+
+<br>
+
+<h2><i class="fa-solid fa-star"></i> Keunggulan</h2>
+<p><i class="fa-solid fa-circle-check"></i> Mudah digunakan</p>
+<p><i class="fa-solid fa-circle-check"></i> Sistem efisien</p>
+<p><i class="fa-solid fa-circle-check"></i> Membantu disiplin kesehatan</p>
+
+<br>
+
+<h2><i class="fa-solid fa-lightbulb"></i> Pengembangan</h2>
+<p>
+Ke depan akan ditambahkan notifikasi real-time dan visualisasi data berbasis grafik.
+</p>
+
 </div>
 
 <div class="float-btn" onclick="openPopup('Info','Popup cepat')">
