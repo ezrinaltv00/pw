@@ -5,250 +5,220 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MedMinder</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root {
     --primary: #F7FAF9;
     --secondary: #E6F4EA;
-    --accent: #7FBF9F;
-    --text: #2E3A36;
+    --accent: #4CAF7D;
+    --text: #24332D;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* {margin:0;padding:0;box-sizing:border-box;}
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: var(--primary);
-    color: var(--text);
-    overflow-x: hidden;
+    font-family:'Inter',sans-serif;
+    background:var(--primary);
+    color:var(--text);
+    scroll-behavior:smooth;
 }
 
-h1,h2,h3 {
-    font-family: 'Poppins', sans-serif;
+/* NAVBAR */
+nav {
+    position:sticky;
+    top:0;
+    background:white;
+    padding:12px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    border-bottom:2px solid var(--accent);
+    z-index:1000;
 }
 
-/* FLOATING ICON BG */
+nav a {
+    text-decoration:none;
+    color:var(--text);
+    font-weight:500;
+}
+nav a i {color:var(--accent);}
+nav a:hover {color:var(--accent);}
+
+/* FLOATING */
 .floating i {
-    position: absolute;
-    color: var(--accent);
-    opacity: 0.18;
-    filter: blur(1px);
+    position:absolute;
+    color:var(--accent);
+    opacity:0.25;
+    text-shadow:0 0 10px rgba(76,175,125,0.4);
+    animation:float 6s infinite ease-in-out;
 }
 
-.floating i:nth-child(1){ top:5%; left:5%; font-size:70px; animation: float1 8s infinite;}
-.floating i:nth-child(2){ top:20%; left:15%; font-size:50px; animation: float2 7s infinite;}
-.floating i:nth-child(3){ top:40%; left:8%; font-size:60px; animation: float3 6s infinite;}
-.floating i:nth-child(4){ top:70%; left:12%; font-size:55px; animation: float2 8s infinite;}
-.floating i:nth-child(5){ top:10%; right:5%; font-size:70px; animation: float1 7s infinite;}
-.floating i:nth-child(6){ top:35%; right:10%; font-size:50px; animation: float3 6s infinite;}
-.floating i:nth-child(7){ bottom:15%; right:8%; font-size:60px; animation: float2 7s infinite;}
-.floating i:nth-child(8){ bottom:5%; left:45%; font-size:55px; animation: float1 9s infinite;}
-.floating i:nth-child(9){ top:60%; right:30%; font-size:45px; animation: float3 6s infinite;}
-.floating i:nth-child(10){ bottom:30%; left:30%; font-size:40px; animation: float2 7s infinite;}
-.floating i:nth-child(11){ top:25%; right:40%; font-size:45px; animation: float1 8s infinite;}
-.floating i:nth-child(12){ bottom:40%; right:20%; font-size:40px; animation: float3 6s infinite;}
+.floating i:nth-child(1){top:5%;left:5%;font-size:40px;}
+.floating i:nth-child(2){top:15%;left:20%;font-size:30px;}
+.floating i:nth-child(3){top:30%;left:10%;font-size:35px;}
+.floating i:nth-child(4){top:60%;left:15%;font-size:28px;}
+.floating i:nth-child(5){top:10%;right:5%;font-size:40px;}
+.floating i:nth-child(6){top:25%;right:15%;font-size:30px;}
+.floating i:nth-child(7){top:45%;right:10%;font-size:35px;}
+.floating i:nth-child(8){bottom:10%;right:5%;font-size:30px;}
+.floating i:nth-child(9){bottom:5%;left:40%;font-size:25px;}
+.floating i:nth-child(10){bottom:30%;left:30%;font-size:30px;}
+.floating i:nth-child(11){top:70%;right:30%;font-size:25px;}
+.floating i:nth-child(12){top:50%;left:50%;font-size:22px;}
+.floating i:nth-child(13){top:80%;left:20%;font-size:26px;}
+.floating i:nth-child(14){bottom:20%;right:25%;font-size:24px;}
 
-@keyframes float1 {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-30px); }
-    100% { transform: translateY(0); }
-}
-@keyframes float2 {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-}
-@keyframes float3 {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-25px); }
-    100% { transform: translateY(0); }
+@keyframes float {
+    0% {transform:translateY(0);}
+    50% {transform:translateY(-20px);}
+    100% {transform:translateY(0);}
 }
 
-/* HEADER STICKY */
+/* HEADER */
 header {
-    text-align: center;
-    padding: 25px;
-    border-bottom: 2px solid var(--accent);
-    position: sticky;
-    top: 0;
-    background: var(--primary);
-    z-index: 999;
+    text-align:center;
+    padding:25px;
+    border-bottom:2px solid var(--accent);
 }
 
-header h1 {
-    color: var(--accent);
-}
+header h1 {color:var(--accent);}
 
 /* GRID */
-.container {
-    display: grid;
-    grid-template-columns: 1.8fr 0.8fr;
+.container{
+    display:grid;
+    grid-template-columns:1.8fr 0.8fr;
 }
 
-/* MAIN */
-.main {
-    padding: 40px;
-    border-right: 2px solid var(--accent);
+.main{
+    padding:40px;
+    border-right:2px solid var(--accent);
 }
 
 /* TEAM */
-.team-photo {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-bottom: 30px;
-    text-align: center;
+.team-photo{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:30px;
+text-align:center;
 }
 
-.member:hover {
-    transform: translateY(-5px);
-}
-
-.member img {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    border: 2px solid var(--accent);
+.member img{
+width:80px;height:80px;
+border-radius:50%;
+border:2px solid var(--accent);
 }
 
 /* SECTION */
-.section {
-    margin-bottom: 35px;
+.section{margin-bottom:35px;}
+.section h2{color:var(--accent);}
+
+/* ABOUT */
+.about-text{
+background:white;
+padding:15px;
+border-radius:10px;
+border:1px solid var(--accent);
+line-height:1.7;
 }
 
-.section h2 {
-    color: var(--accent);
-    margin-bottom: 10px;
+/* PROJECT */
+.project-main{
+background:white;
+padding:20px;
+border-radius:12px;
+border:1.5px solid var(--accent);
+cursor:pointer;
+margin-bottom:15px;
+display:flex;
+align-items:center;
+gap:10px;
+transition:0.3s;
 }
 
-.about-text {
-    line-height: 1.6;
-    font-size: 14px;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid var(--accent);
+.project-main i{color:var(--accent);}
+.project-main:hover{
+transform:translateY(-5px);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-.project-main {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1.5px solid var(--accent);
+/* SIDEBAR */
+.sidebar{
+background:var(--secondary);
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
 }
 
-.project-detail {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+.side-card,.mini-box{
+background:white;
+padding:12px;
+border-radius:10px;
+border:1px solid var(--accent);
 }
 
-.detail {
-    background: var(--secondary);
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-}
+.side-card i,.mini-box i{color:var(--accent);}
 
-.sidebar {
-    background: var(--secondary);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.side-card {
-    background: rgba(255,255,255,0.7);
-    padding: 12px;
-    border-radius: 10px;
-    font-size: 13px;
-}
-
-.mini-box {
-    background: white;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid var(--accent);
-    font-size: 13px;
-}
-
-.stats {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-footer {
-    margin-top: 30px;
-    padding: 20px;
-    text-align: center;
-    background: var(--secondary);
-    border-top: 2px solid var(--accent);
+/* FLOAT BUTTON */
+.float-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:var(--accent);
+color:white;
+padding:15px;
+border-radius:50%;
+cursor:pointer;
+box-shadow:0 0 10px rgba(76,175,125,0.5);
 }
 
 /* POPUP */
-.popup {
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.4);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
+.popup{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.4);
+justify-content:center;
+align-items:center;
 }
 
-.popup-content {
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    text-align:center;
-    width:300px;
+.popup-content{
+background:white;
+padding:20px;
+border-radius:10px;
+width:300px;
+text-align:center;
 }
 
-.popup-content button {
-    margin-top:10px;
-    padding:8px 15px;
-    border:none;
-    background:var(--accent);
-    color:white;
-    border-radius:8px;
-    cursor:pointer;
+/* EXTRA */
+.extra{
+padding:40px;
+line-height:1.8;
 }
 
-/* FLOATING BUTTON */
-.floating-btn {
-    position: fixed;
-    bottom:25px;
-    right:25px;
-    background:var(--accent);
-    color:white;
-    padding:15px;
-    border-radius:50%;
-    font-size:20px;
-    cursor:pointer;
-    z-index:999;
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:var(--secondary);
 }
 
 @media(max-width:768px){
-    .container{
-        grid-template-columns: 1fr;
-    }
+.container{grid-template-columns:1fr;}
 }
 </style>
 </head>
 
 <body>
+
+<nav>
+<a href="#about"><i class="fa-solid fa-users"></i> Tentang</a>
+<a href="#portfolio"><i class="fa-solid fa-briefcase-medical"></i> Portofolio</a>
+</nav>
 
 <div class="floating">
 <i class="fa-solid fa-heart-pulse"></i>
@@ -263,6 +233,8 @@ footer {
 <i class="fa-solid fa-briefcase-medical"></i>
 <i class="fa-solid fa-heart-pulse"></i>
 <i class="fa-solid fa-pills"></i>
+<i class="fa-solid fa-stethoscope"></i>
+<i class="fa-solid fa-heart"></i>
 </div>
 
 <header>
@@ -271,56 +243,128 @@ footer {
 </header>
 
 <div class="container">
+
 <div class="main">
 
 <div class="team-photo">
-<div class="member"><img src="nay.jpeg"><h4>Nayla Firzatul J.</h4><p>Backend</p></div>
-<div class="member"><img src="ezrina.jpeg"><h4>Ezrina Lativani</h4><p>Frontend</p></div>
-<div class="member"><img src="aliqa.jpeg"><h4>Aliqa Luthfiana Syabila</h4><p>Database</p></div>
-<div class="member"><img src="sabrinaa.jpeg"><h4>Sabrina Ayu K.</h4><p>UI/UX</p></div>
+<div class="member"><img src="https://via.placeholder.com/100"><h4>Ezrina</h4><p>Backend</p></div>
+<div class="member"><img src="https://via.placeholder.com/100"><h4>Nama 2</h4><p>Frontend</p></div>
+<div class="member"><img src="https://via.placeholder.com/100"><h4>Nama 3</h4><p>Database</p></div>
+<div class="member"><img src="https://via.placeholder.com/100"><h4>Nama 4</h4><p>UI/UX</p></div>
 </div>
 
-<div class="section">
-<h2>Tentang Kami</h2>
+<div class="section" id="about">
+<h2><i class="fa-solid fa-users"></i> Tentang Kami</h2>
 <div class="about-text">
-Kami adalah tim mahasiswa informatika yang berfokus pada pengembangan aplikasi kesehatan digital.
+Kami adalah tim mahasiswa informatika yang memiliki fokus pada pengembangan sistem berbasis teknologi untuk membantu aktivitas sehari-hari, khususnya dalam bidang kesehatan digital. 
+Melalui proyek MedMinder, kami berupaya menghadirkan solusi yang mampu membantu pengguna dalam mengatur konsumsi obat secara terjadwal, terstruktur, dan efisien. 
+Aplikasi ini dirancang dengan mempertimbangkan kemudahan penggunaan (user friendly) serta efisiensi dalam pencatatan data, sehingga pengguna dapat dengan mudah memantau riwayat konsumsi obat dan menjaga konsistensi dalam menjaga kesehatan.
 </div>
+</div>
+
+<div class="section" id="portfolio">
+<h2><i class="fa-solid fa-briefcase-medical"></i> Portofolio</h2>
+
+<div class="project-main" onclick="openPopup('QR Login','Fitur scan barcode digunakan sebagai metode autentikasi pengguna agar proses login menjadi lebih cepat dan praktis.')">
+<i class="fa-solid fa-barcode"></i> QR Login
+</div>
+
+<div class="project-main" onclick="openPopup('Jadwal Otomatis','Sistem akan secara otomatis mengatur jadwal konsumsi obat berdasarkan frekuensi dan aturan minum yang telah ditentukan.')">
+<i class="fa-solid fa-clock"></i> Jadwal
+</div>
+
+<div class="project-main" onclick="openPopup('Tracking','Pengguna dapat melakukan monitoring terhadap konsumsi obat harian secara real-time melalui sistem checklist.')">
+<i class="fa-solid fa-check"></i> Tracking
+</div>
+
+<div class="project-main" onclick="openPopup('Export Data','Data konsumsi obat dapat diekspor ke dalam format Excel untuk keperluan dokumentasi dan analisis lebih lanjut.')">
+<i class="fa-solid fa-file-excel"></i> Export
+</div>
+
 </div>
 
 </div>
 
 <div class="sidebar">
-<div class="side-card">Kesehatan Digital</div>
+<div class="side-card"><i class="fa-solid fa-heart"></i> Kesehatan Digital</div>
+<div class="side-card"><i class="fa-solid fa-pills"></i> Manajemen Obat</div>
+<div class="side-card"><i class="fa-solid fa-chart-line"></i> Tracking</div>
+
+<div class="mini-box">
+<b><i class="fa-solid fa-info-circle"></i> Info</b><br>
+Tim: 4 Orang<br>
+Status: Aktif
+</div>
+
+<div class="mini-box">
+<b><i class="fa-solid fa-phone"></i> Kontak</b><br>
+medminder@mail.com
+</div>
+</div>
+
+</div>
+
+<div class="extra">
+
+<h2><i class="fa-solid fa-notes-medical"></i> Informasi Tambahan</h2>
+
+<p>
+MedMinder merupakan aplikasi berbasis sistem yang dikembangkan untuk membantu pengguna dalam mengelola konsumsi obat secara lebih terstruktur dan efisien. 
+Dengan adanya fitur penjadwalan otomatis, pengguna tidak perlu lagi mengingat secara manual waktu konsumsi obat, sehingga risiko lupa dapat diminimalisir.
+</p>
+
+<p>
+Selain itu, aplikasi ini juga menyediakan fitur pencatatan riwayat konsumsi obat yang dapat membantu pengguna dalam memantau kedisiplinan serta efektivitas penggunaan obat dalam jangka waktu tertentu.
+</p>
+
+<br>
+
+<h2><i class="fa-solid fa-capsules"></i> Fitur Utama</h2>
+<p><i class="fa-solid fa-barcode"></i> Sistem login menggunakan QR Code</p>
+<p><i class="fa-solid fa-clock"></i> Penjadwalan otomatis berdasarkan aturan minum</p>
+<p><i class="fa-solid fa-check-circle"></i> Monitoring konsumsi obat harian</p>
+<p><i class="fa-solid fa-file-excel"></i> Ekspor data ke dalam format Excel</p>
+
+<br>
+
+<h2><i class="fa-solid fa-star"></i> Keunggulan</h2>
+<p><i class="fa-solid fa-circle-check"></i> Antarmuka sederhana dan mudah digunakan</p>
+<p><i class="fa-solid fa-circle-check"></i> Sistem terstruktur dan efisien</p>
+<p><i class="fa-solid fa-circle-check"></i> Membantu meningkatkan kedisiplinan pengguna</p>
+
+<br>
+
+<h2><i class="fa-solid fa-lightbulb"></i> Pengembangan Selanjutnya</h2>
+<p>
+Ke depan, MedMinder akan dikembangkan dengan penambahan fitur notifikasi otomatis berbasis waktu, integrasi dengan perangkat mobile, serta visualisasi data dalam bentuk grafik interaktif untuk meningkatkan pengalaman pengguna.
+</p>
+
+</div>
+
+<div class="float-btn" onclick="openPopup('Informasi','Ini adalah tombol cepat untuk mengakses informasi tambahan terkait aplikasi MedMinder.')">
+<i class="fa-solid fa-bell"></i>
+</div>
+
+<div class="popup" id="popup">
+<div class="popup-content">
+<span onclick="closePopup()">X</span>
+<h3 id="popTitle"></h3>
+<p id="popDesc"></p>
 </div>
 </div>
 
 <footer>
-MedMinder Project
+<i class="fa-solid fa-heart-pulse"></i> MedMinder 2026
 </footer>
 
-<!-- POPUP -->
-<div class="popup" id="popup">
-<div class="popup-content">
-<h2>Selamat Datang 👋</h2>
-<p>Gunakan MedMinder untuk mengatur jadwal obatmu!</p>
-<button onclick="closePopup()">Mulai</button>
-</div>
-</div>
-
-<!-- FLOATING BUTTON -->
-<div class="floating-btn" onclick="openPopup()">
-<i class="fa-solid fa-comment-medical"></i>
-</div>
-
 <script>
-window.onload = function(){
-    document.getElementById("popup").style.display = "flex";
+function openPopup(t,d){
+document.getElementById("popup").style.display="flex";
+popTitle.innerText=t;
+popDesc.innerText=d;
 }
 function closePopup(){
-    document.getElementById("popup").style.display = "none";
-}
-function openPopup(){
-    document.getElementById("popup").style.display = "flex";
+popup.style.display="none";
 }
 </script>
 
