@@ -38,11 +38,7 @@ nav {
     z-index:1000;
 }
 
-nav a {
-    text-decoration:none;
-    color:var(--text);
-    font-weight:500;
-}
+nav a {text-decoration:none;color:var(--text);font-weight:500;}
 nav a i {color:var(--accent);}
 nav a:hover {color:var(--accent);}
 
@@ -54,21 +50,6 @@ nav a:hover {color:var(--accent);}
     text-shadow:0 0 10px rgba(76,175,125,0.4);
     animation:float 6s infinite ease-in-out;
 }
-
-.floating i:nth-child(1){top:5%;left:5%;font-size:40px;}
-.floating i:nth-child(2){top:15%;left:20%;font-size:30px;}
-.floating i:nth-child(3){top:30%;left:10%;font-size:35px;}
-.floating i:nth-child(4){top:60%;left:15%;font-size:28px;}
-.floating i:nth-child(5){top:10%;right:5%;font-size:40px;}
-.floating i:nth-child(6){top:25%;right:15%;font-size:30px;}
-.floating i:nth-child(7){top:45%;right:10%;font-size:35px;}
-.floating i:nth-child(8){bottom:10%;right:5%;font-size:30px;}
-.floating i:nth-child(9){bottom:5%;left:40%;font-size:25px;}
-.floating i:nth-child(10){bottom:30%;left:30%;font-size:30px;}
-.floating i:nth-child(11){top:70%;right:30%;font-size:25px;}
-.floating i:nth-child(12){top:50%;left:50%;font-size:22px;}
-.floating i:nth-child(13){top:80%;left:20%;font-size:26px;}
-.floating i:nth-child(14){bottom:20%;right:25%;font-size:24px;}
 
 @keyframes float {
     0% {transform:translateY(0);}
@@ -189,15 +170,56 @@ align-items:center;
 .popup-content{
 background:white;
 padding:20px;
-border-radius:10px;
-width:300px;
-text-align:center;
+border-radius:12px;
+width:320px;
+text-align:left;
+border-top:5px solid var(--accent);
 }
 
-/* EXTRA */
+.popup-content h3{
+color:var(--accent);
+margin-bottom:10px;
+}
+
+.popup-content p{
+font-size:14px;
+line-height:1.6;
+}
+
+.popup-content i{
+color:var(--accent);
+margin-right:5px;
+}
+
+.close{
+float:right;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* EXTRA (HIJAU) */
 .extra{
 padding:40px;
+background:var(--secondary);
 line-height:1.8;
+border-top:2px solid var(--accent);
+}
+
+.extra h2{
+color:var(--accent);
+margin-top:20px;
+}
+
+.extra i{
+color:var(--accent);
+}
+
+/* LINE */
+.divider{
+height:2px;
+background:var(--accent);
+margin:20px 0;
+opacity:0.3;
 }
 
 /* FOOTER */
@@ -205,6 +227,7 @@ footer{
 text-align:center;
 padding:20px;
 background:var(--secondary);
+border-top:2px solid var(--accent);
 }
 
 @media(max-width:768px){
@@ -219,23 +242,6 @@ background:var(--secondary);
 <a href="#about"><i class="fa-solid fa-users"></i> Tentang</a>
 <a href="#portfolio"><i class="fa-solid fa-briefcase-medical"></i> Portofolio</a>
 </nav>
-
-<div class="floating">
-<i class="fa-solid fa-heart-pulse"></i>
-<i class="fa-solid fa-pills"></i>
-<i class="fa-solid fa-stethoscope"></i>
-<i class="fa-solid fa-kit-medical"></i>
-<i class="fa-solid fa-syringe"></i>
-<i class="fa-solid fa-capsules"></i>
-<i class="fa-solid fa-notes-medical"></i>
-<i class="fa-solid fa-user-doctor"></i>
-<i class="fa-solid fa-heart"></i>
-<i class="fa-solid fa-briefcase-medical"></i>
-<i class="fa-solid fa-heart-pulse"></i>
-<i class="fa-solid fa-pills"></i>
-<i class="fa-solid fa-stethoscope"></i>
-<i class="fa-solid fa-heart"></i>
-</div>
 
 <header>
 <h1><i class="fa-solid fa-heart-pulse"></i> MedMinder</h1>
@@ -256,29 +262,19 @@ background:var(--secondary);
 <div class="section" id="about">
 <h2><i class="fa-solid fa-users"></i> Tentang Kami</h2>
 <div class="about-text">
-Kami adalah tim mahasiswa informatika yang memiliki fokus pada pengembangan sistem berbasis teknologi untuk membantu aktivitas sehari-hari, khususnya dalam bidang kesehatan digital. 
-Melalui proyek MedMinder, kami berupaya menghadirkan solusi yang mampu membantu pengguna dalam mengatur konsumsi obat secara terjadwal, terstruktur, dan efisien. 
-Aplikasi ini dirancang dengan mempertimbangkan kemudahan penggunaan (user friendly) serta efisiensi dalam pencatatan data, sehingga pengguna dapat dengan mudah memantau riwayat konsumsi obat dan menjaga konsistensi dalam menjaga kesehatan.
+Kami adalah tim mahasiswa informatika yang berfokus pada pengembangan aplikasi kesehatan digital...
 </div>
 </div>
 
 <div class="section" id="portfolio">
 <h2><i class="fa-solid fa-briefcase-medical"></i> Portofolio</h2>
 
-<div class="project-main" onclick="openPopup('QR Login','Fitur scan barcode digunakan sebagai metode autentikasi pengguna agar proses login menjadi lebih cepat dan praktis.')">
+<div class="project-main" onclick="openPopup('QR Login','Fitur scan barcode untuk login user secara cepat dan aman.')">
 <i class="fa-solid fa-barcode"></i> QR Login
 </div>
 
-<div class="project-main" onclick="openPopup('Jadwal Otomatis','Sistem akan secara otomatis mengatur jadwal konsumsi obat berdasarkan frekuensi dan aturan minum yang telah ditentukan.')">
+<div class="project-main" onclick="openPopup('Jadwal Otomatis','Mengatur jadwal minum obat berdasarkan frekuensi.')">
 <i class="fa-solid fa-clock"></i> Jadwal
-</div>
-
-<div class="project-main" onclick="openPopup('Tracking','Pengguna dapat melakukan monitoring terhadap konsumsi obat harian secara real-time melalui sistem checklist.')">
-<i class="fa-solid fa-check"></i> Tracking
-</div>
-
-<div class="project-main" onclick="openPopup('Export Data','Data konsumsi obat dapat diekspor ke dalam format Excel untuk keperluan dokumentasi dan analisis lebih lanjut.')">
-<i class="fa-solid fa-file-excel"></i> Export
 </div>
 
 </div>
@@ -287,67 +283,38 @@ Aplikasi ini dirancang dengan mempertimbangkan kemudahan penggunaan (user friend
 
 <div class="sidebar">
 <div class="side-card"><i class="fa-solid fa-heart"></i> Kesehatan Digital</div>
-<div class="side-card"><i class="fa-solid fa-pills"></i> Manajemen Obat</div>
-<div class="side-card"><i class="fa-solid fa-chart-line"></i> Tracking</div>
-
-<div class="mini-box">
-<b><i class="fa-solid fa-info-circle"></i> Info</b><br>
-Tim: 4 Orang<br>
-Status: Aktif
-</div>
-
-<div class="mini-box">
-<b><i class="fa-solid fa-phone"></i> Kontak</b><br>
-medminder@mail.com
-</div>
+<div class="mini-box">Tim: 4 Orang</div>
 </div>
 
 </div>
 
+<!-- EXTRA HIJAU -->
 <div class="extra">
 
 <h2><i class="fa-solid fa-notes-medical"></i> Informasi Tambahan</h2>
+<p>MedMinder membantu pengguna dalam monitoring obat secara efisien...</p>
 
-<p>
-MedMinder merupakan aplikasi berbasis sistem yang dikembangkan untuk membantu pengguna dalam mengelola konsumsi obat secara lebih terstruktur dan efisien. 
-Dengan adanya fitur penjadwalan otomatis, pengguna tidak perlu lagi mengingat secara manual waktu konsumsi obat, sehingga risiko lupa dapat diminimalisir.
-</p>
-
-<p>
-Selain itu, aplikasi ini juga menyediakan fitur pencatatan riwayat konsumsi obat yang dapat membantu pengguna dalam memantau kedisiplinan serta efektivitas penggunaan obat dalam jangka waktu tertentu.
-</p>
-
-<br>
+<div class="divider"></div>
 
 <h2><i class="fa-solid fa-capsules"></i> Fitur Utama</h2>
-<p><i class="fa-solid fa-barcode"></i> Sistem login menggunakan QR Code</p>
-<p><i class="fa-solid fa-clock"></i> Penjadwalan otomatis berdasarkan aturan minum</p>
-<p><i class="fa-solid fa-check-circle"></i> Monitoring konsumsi obat harian</p>
-<p><i class="fa-solid fa-file-excel"></i> Ekspor data ke dalam format Excel</p>
+<p><i class="fa-solid fa-check-circle"></i> QR Login</p>
+<p><i class="fa-solid fa-check-circle"></i> Jadwal</p>
 
-<br>
+<div class="divider"></div>
 
 <h2><i class="fa-solid fa-star"></i> Keunggulan</h2>
-<p><i class="fa-solid fa-circle-check"></i> Antarmuka sederhana dan mudah digunakan</p>
-<p><i class="fa-solid fa-circle-check"></i> Sistem terstruktur dan efisien</p>
-<p><i class="fa-solid fa-circle-check"></i> Membantu meningkatkan kedisiplinan pengguna</p>
-
-<br>
-
-<h2><i class="fa-solid fa-lightbulb"></i> Pengembangan Selanjutnya</h2>
-<p>
-Ke depan, MedMinder akan dikembangkan dengan penambahan fitur notifikasi otomatis berbasis waktu, integrasi dengan perangkat mobile, serta visualisasi data dalam bentuk grafik interaktif untuk meningkatkan pengalaman pengguna.
-</p>
+<p><i class="fa-solid fa-circle-check"></i> Mudah digunakan</p>
+<p><i class="fa-solid fa-circle-check"></i> Efisien</p>
 
 </div>
 
-<div class="float-btn" onclick="openPopup('Informasi','Ini adalah tombol cepat untuk mengakses informasi tambahan terkait aplikasi MedMinder.')">
+<div class="float-btn" onclick="openPopup('Info','Ini tombol cepat informasi aplikasi.')">
 <i class="fa-solid fa-bell"></i>
 </div>
 
 <div class="popup" id="popup">
 <div class="popup-content">
-<span onclick="closePopup()">X</span>
+<span class="close" onclick="closePopup()">X</span>
 <h3 id="popTitle"></h3>
 <p id="popDesc"></p>
 </div>
@@ -359,7 +326,7 @@ Ke depan, MedMinder akan dikembangkan dengan penambahan fitur notifikasi otomati
 
 <script>
 function openPopup(t,d){
-document.getElementById("popup").style.display="flex";
+popup.style.display="flex";
 popTitle.innerText=t;
 popDesc.innerText=d;
 }
