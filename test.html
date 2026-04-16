@@ -19,37 +19,26 @@
 * {margin:0;padding:0;box-sizing:border-box;}
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: var(--primary);
-    color: var(--text);
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    font-family:'Inter',sans-serif;
+    background:var(--primary);
+    color:var(--text);
+    scroll-behavior:smooth;
 }
 
-h1,h2,h3 {font-family:'Poppins',sans-serif;}
-
-/* NAVBAR */
+/* NAVBAR STICKY */
 nav {
-    position: sticky;
-    top: 0;
-    background: white;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    border-bottom: 2px solid var(--accent);
-    z-index: 1000;
+    position:sticky;
+    top:0;
+    background:white;
+    padding:12px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    border-bottom:2px solid var(--accent);
+    z-index:1000;
 }
 
-nav a {
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
-}
-
-nav a:hover {color: var(--accent);}
-
-/* FLOATING BACKGROUND */
+/* FLOATING BG */
 .floating i {
     position:absolute;
     color:var(--accent);
@@ -58,163 +47,64 @@ nav a:hover {color: var(--accent);}
     font-size:60px;
     animation: float 8s infinite;
 }
-
-.floating i:nth-child(1){top:5%;left:5%;}
-.floating i:nth-child(2){top:20%;left:15%;}
-.floating i:nth-child(3){top:40%;left:8%;}
-.floating i:nth-child(4){top:70%;left:12%;}
-.floating i:nth-child(5){top:10%;right:5%;}
-.floating i:nth-child(6){top:35%;right:10%;}
-.floating i:nth-child(7){bottom:15%;right:8%;}
-.floating i:nth-child(8){bottom:5%;left:45%;}
-.floating i:nth-child(9){top:60%;right:30%;}
-.floating i:nth-child(10){bottom:30%;left:30%;}
-
-@keyframes float {
-    50% {transform: translateY(-25px);}
-}
+@keyframes float {50%{transform:translateY(-25px);}}
 
 /* HEADER */
-header {
-    text-align:center;
-    padding:25px;
-    border-bottom:2px solid var(--accent);
-}
-
-header h1 {color:var(--accent);}
+header {text-align:center;padding:25px;border-bottom:2px solid var(--accent);}
+header h1{color:var(--accent);}
 
 /* GRID */
-.container {
-    display:grid;
-    grid-template-columns:1.8fr 0.8fr;
-}
-
-/* MAIN */
-.main {
-    padding:40px;
-    border-right:2px solid var(--accent);
-}
+.container{display:grid;grid-template-columns:1.8fr 0.8fr;}
+.main{padding:40px;border-right:2px solid var(--accent);}
 
 /* TEAM */
-.team-photo {
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-    margin-bottom:30px;
-    text-align:center;
-}
-
-.member:hover {transform:translateY(-5px);}
-
-.member img {
-    width:75px;height:75px;
-    border-radius:50%;
-    border:2px solid var(--accent);
-}
+.team-photo{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:30px;text-align:center;}
+.member img{width:75px;height:75px;border-radius:50%;border:2px solid var(--accent);}
 
 /* SECTION */
-.section {margin-bottom:35px;}
-.section h2 {color:var(--accent);}
+.section{margin-bottom:35px;}
+.section h2{color:var(--accent);}
 
 /* ABOUT */
-.about-text {
-    background:white;
-    padding:15px;
-    border-radius:10px;
-    border:1px solid var(--accent);
-    line-height:1.6;
-}
+.about-text{background:white;padding:15px;border-radius:10px;border:1px solid var(--accent);}
 
 /* PROJECT */
-.project-main {
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    border:1.5px solid var(--accent);
-    cursor:pointer;
-}
-
-/* DETAIL */
-.project-detail {
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-}
-
-.detail {
-    background:var(--secondary);
-    padding:10px;
-    border-radius:8px;
-    text-align:center;
-}
+.project-main{background:white;padding:20px;border-radius:12px;border:1.5px solid var(--accent);cursor:pointer;margin-bottom:15px;}
+.project-detail{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.detail{background:var(--secondary);padding:10px;border-radius:8px;text-align:center;}
 
 /* SIDEBAR */
-.sidebar {
-    background:var(--secondary);
-    padding:20px;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-.side-card {
-    background:rgba(255,255,255,0.7);
-    padding:12px;
-    border-radius:10px;
-}
-
-.mini-box {
-    background:white;
-    padding:12px;
-    border-radius:10px;
-    border:1px solid var(--accent);
-}
+.sidebar{background:var(--secondary);padding:20px;display:flex;flex-direction:column;gap:15px;}
+.side-card,.mini-box{background:white;padding:12px;border-radius:10px;border:1px solid var(--accent);}
 
 /* FLOAT BUTTON */
-.float-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--accent);
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
+.float-btn{
+position:fixed;bottom:20px;right:20px;
+background:var(--accent);color:white;
+padding:15px;border-radius:50%;cursor:pointer;
 }
 
 /* POPUP */
-.popup {
-    display:none;
-    position:fixed;
-    top:0;left:0;
-    width:100%;height:100%;
-    background:rgba(0,0,0,0.4);
-    justify-content:center;
-    align-items:center;
+.popup{
+display:none;position:fixed;
+top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.4);
+justify-content:center;align-items:center;
 }
-
-.popup-content {
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    width:300px;
-    text-align:center;
+.popup-content{
+background:white;padding:20px;border-radius:10px;width:300px;text-align:center;
 }
-
-.close {
-    cursor:pointer;
-    float:right;
-}
+.close{cursor:pointer;float:right;}
 
 /* FOOTER */
-footer {
-    margin-top:30px;
-    padding:20px;
-    text-align:center;
-    background:var(--secondary);
+footer{text-align:center;padding:20px;background:var(--secondary);}
+
+/* EXTRA SECTION BIAR PANJANG */
+.extra{
+padding:40px;
+line-height:1.8;
 }
 
-/* RESPONSIVE */
 @media(max-width:768px){
 .container{grid-template-columns:1fr;}
 }
@@ -223,28 +113,13 @@ footer {
 
 <body>
 
-<!-- NAV -->
 <nav>
 <a href="#about">Tentang</a>
 <a href="#portfolio">Portofolio</a>
 </nav>
 
-<!-- FLOATING BG -->
-<div class="floating">
-<i class="fa-solid fa-heart-pulse"></i>
-<i class="fa-solid fa-pills"></i>
-<i class="fa-solid fa-stethoscope"></i>
-<i class="fa-solid fa-kit-medical"></i>
-<i class="fa-solid fa-syringe"></i>
-<i class="fa-solid fa-capsules"></i>
-<i class="fa-solid fa-notes-medical"></i>
-<i class="fa-solid fa-user-doctor"></i>
-<i class="fa-solid fa-heart"></i>
-<i class="fa-solid fa-briefcase-medical"></i>
-</div>
-
 <header>
-<h1><i class="fa-solid fa-heart-pulse"></i> MedMinder</h1>
+<h1>MedMinder</h1>
 <p>Monitoring Kesehatan Harian</p>
 </header>
 
@@ -260,25 +135,27 @@ footer {
 </div>
 
 <div class="section" id="about">
-<h2><i class="fa-solid fa-users"></i> Tentang Kami</h2>
-<div class="about-text">
-Kami adalah tim mahasiswa informatika yang berfokus pada pengembangan aplikasi kesehatan digital.
-</div>
+<h2>Tentang Kami</h2>
+<div class="about-text">Kami adalah tim mahasiswa informatika...</div>
 </div>
 
 <div class="section" id="portfolio">
-<h2><i class="fa-solid fa-briefcase-medical"></i> Portofolio</h2>
+<h2>Portofolio</h2>
 
-<div class="project-main" onclick="openPopup()">
-<h3>MedMinder</h3>
-<p>Klik untuk detail</p>
-
-<div class="project-detail">
-<div class="detail">QR Login</div>
-<div class="detail">Jadwal</div>
-<div class="detail">Tracking</div>
-<div class="detail">Export</div>
+<div class="project-main" onclick="openPopup('Login QR','Fitur scan barcode untuk login user')">
+<h3>QR Login</h3>
 </div>
+
+<div class="project-main" onclick="openPopup('Jadwal Otomatis','Sistem mengatur jadwal minum obat')">
+<h3>Jadwal</h3>
+</div>
+
+<div class="project-main" onclick="openPopup('Tracking','Monitoring konsumsi obat harian')">
+<h3>Tracking</h3>
+</div>
+
+<div class="project-main" onclick="openPopup('Export Excel','Data bisa diexport ke Excel')">
+<h3>Export</h3>
 </div>
 
 </div>
@@ -287,36 +164,34 @@ Kami adalah tim mahasiswa informatika yang berfokus pada pengembangan aplikasi k
 
 <div class="sidebar">
 <div class="side-card">Kesehatan Digital</div>
-<div class="side-card">Manajemen Obat</div>
-<div class="side-card">Jadwal Otomatis</div>
-<div class="side-card">Tracking</div>
-
-<div class="mini-box">
-<b>Project Info</b><br>
-Tim: 4 Orang<br>
-Status: Aktif
+<div class="mini-box">Tim: 4 Orang</div>
 </div>
 
-<div class="mini-box">
-<b>Kontak</b><br>
-medminder@mail.com<br>
-08xxxx
-</div>
 </div>
 
+<!-- EXTRA BIAR SCROLL PANJANG -->
+<div class="extra">
+<h2>Informasi Tambahan</h2>
+<p>
+Aplikasi MedMinder dirancang untuk membantu pengguna dalam mengelola konsumsi obat secara efisien.
+Dengan sistem otomatis, pengguna dapat memantau jadwal harian dengan lebih mudah dan terstruktur.
+</p>
+<p>
+Pengembangan aplikasi ini menggunakan pendekatan berbasis sistem CLI dan integrasi data menggunakan file Excel.
+</p>
 </div>
 
 <!-- FLOAT BUTTON -->
-<div class="float-btn" onclick="openPopup()">
-<i class="fa-solid fa-bell"></i>
+<div class="float-btn" onclick="openPopup('Info','Ini tombol cepat popup')">
+🔔
 </div>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
 <div class="popup-content">
 <span class="close" onclick="closePopup()">X</span>
-<h3>MedMinder</h3>
-<p>Aplikasi pengingat minum obat berbasis sistem.</p>
+<h3 id="popTitle"></h3>
+<p id="popDesc"></p>
 </div>
 </div>
 
@@ -325,8 +200,10 @@ MedMinder Project | Informatika 2026
 </footer>
 
 <script>
-function openPopup(){
+function openPopup(title,desc){
 document.getElementById("popup").style.display="flex";
+document.getElementById("popTitle").innerText=title;
+document.getElementById("popDesc").innerText=desc;
 }
 function closePopup(){
 document.getElementById("popup").style.display="none";
