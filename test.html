@@ -25,7 +25,7 @@ body {
     scroll-behavior:smooth;
 }
 
-/* NAVBAR STICKY */
+/* NAVBAR */
 nav {
     position:sticky;
     top:0;
@@ -38,71 +38,133 @@ nav {
     z-index:1000;
 }
 
-/* FLOATING BG */
+nav a {
+    text-decoration:none;
+    color:var(--text);
+    font-weight:500;
+}
+
+nav a:hover {color:var(--accent);}
+
+/* FLOATING BACKGROUND */
 .floating i {
     position:absolute;
     color:var(--accent);
-    opacity:0.18;
+    opacity:0.15;
     filter:blur(1px);
-    font-size:60px;
-    animation: float 8s infinite;
+    font-size:65px;
+    animation:float 8s infinite;
 }
+
 @keyframes float {50%{transform:translateY(-25px);}}
 
 /* HEADER */
-header {text-align:center;padding:25px;border-bottom:2px solid var(--accent);}
-header h1{color:var(--accent);}
+header {
+    text-align:center;
+    padding:25px;
+    border-bottom:2px solid var(--accent);
+}
+
+header h1 {color:var(--accent);}
 
 /* GRID */
 .container{display:grid;grid-template-columns:1.8fr 0.8fr;}
 .main{padding:40px;border-right:2px solid var(--accent);}
 
 /* TEAM */
-.team-photo{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:30px;text-align:center;}
-.member img{width:75px;height:75px;border-radius:50%;border:2px solid var(--accent);}
+.team-photo{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:30px;
+text-align:center;
+}
+
+.member img{
+width:75px;height:75px;
+border-radius:50%;
+border:2px solid var(--accent);
+}
 
 /* SECTION */
 .section{margin-bottom:35px;}
 .section h2{color:var(--accent);}
 
 /* ABOUT */
-.about-text{background:white;padding:15px;border-radius:10px;border:1px solid var(--accent);}
+.about-text{
+background:white;
+padding:15px;
+border-radius:10px;
+border:1px solid var(--accent);
+}
 
 /* PROJECT */
-.project-main{background:white;padding:20px;border-radius:12px;border:1.5px solid var(--accent);cursor:pointer;margin-bottom:15px;}
-.project-detail{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
-.detail{background:var(--secondary);padding:10px;border-radius:8px;text-align:center;}
+.project-main{
+background:white;
+padding:20px;
+border-radius:12px;
+border:1.5px solid var(--accent);
+cursor:pointer;
+margin-bottom:15px;
+display:flex;
+align-items:center;
+gap:10px;
+}
 
 /* SIDEBAR */
-.sidebar{background:var(--secondary);padding:20px;display:flex;flex-direction:column;gap:15px;}
-.side-card,.mini-box{background:white;padding:12px;border-radius:10px;border:1px solid var(--accent);}
+.sidebar{
+background:var(--secondary);
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.side-card,.mini-box{
+background:white;
+padding:12px;
+border-radius:10px;
+border:1px solid var(--accent);
+}
 
 /* FLOAT BUTTON */
 .float-btn{
-position:fixed;bottom:20px;right:20px;
-background:var(--accent);color:white;
-padding:15px;border-radius:50%;cursor:pointer;
+position:fixed;
+bottom:20px;
+right:20px;
+background:var(--accent);
+color:white;
+padding:15px;
+border-radius:50%;
+cursor:pointer;
 }
 
 /* POPUP */
 .popup{
-display:none;position:fixed;
-top:0;left:0;width:100%;height:100%;
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
 background:rgba(0,0,0,0.4);
-justify-content:center;align-items:center;
+justify-content:center;
+align-items:center;
 }
 .popup-content{
-background:white;padding:20px;border-radius:10px;width:300px;text-align:center;
+background:white;
+padding:20px;
+border-radius:10px;
+width:300px;
+text-align:center;
 }
-.close{cursor:pointer;float:right;}
+
+/* EXTRA */
+.extra{padding:40px;line-height:1.8;}
 
 /* FOOTER */
-footer{text-align:center;padding:20px;background:var(--secondary);}
-
-/* EXTRA SECTION BIAR PANJANG */
-.extra{
-padding:40px;
-line-height:1.8;
+footer{
+text-align:center;
+padding:20px;
+background:var(--secondary);
 }
 
 @media(max-width:768px){
@@ -113,13 +175,30 @@ line-height:1.8;
 
 <body>
 
+<!-- NAV -->
 <nav>
-<a href="#about">Tentang</a>
-<a href="#portfolio">Portofolio</a>
+<a href="#about"><i class="fa-solid fa-users"></i> Tentang</a>
+<a href="#portfolio"><i class="fa-solid fa-briefcase-medical"></i> Portofolio</a>
 </nav>
 
+<!-- FLOATING -->
+<div class="floating">
+<i class="fa-solid fa-heart-pulse"></i>
+<i class="fa-solid fa-pills"></i>
+<i class="fa-solid fa-stethoscope"></i>
+<i class="fa-solid fa-kit-medical"></i>
+<i class="fa-solid fa-syringe"></i>
+<i class="fa-solid fa-capsules"></i>
+<i class="fa-solid fa-notes-medical"></i>
+<i class="fa-solid fa-user-doctor"></i>
+<i class="fa-solid fa-heart"></i>
+<i class="fa-solid fa-briefcase-medical"></i>
+<i class="fa-solid fa-heart-pulse"></i>
+<i class="fa-solid fa-pills"></i>
+</div>
+
 <header>
-<h1>MedMinder</h1>
+<h1><i class="fa-solid fa-heart-pulse"></i> MedMinder</h1>
 <p>Monitoring Kesehatan Harian</p>
 </header>
 
@@ -135,27 +214,29 @@ line-height:1.8;
 </div>
 
 <div class="section" id="about">
-<h2>Tentang Kami</h2>
-<div class="about-text">Kami adalah tim mahasiswa informatika...</div>
+<h2><i class="fa-solid fa-users"></i> Tentang Kami</h2>
+<div class="about-text">
+Kami adalah tim mahasiswa informatika yang mengembangkan aplikasi kesehatan digital.
+</div>
 </div>
 
 <div class="section" id="portfolio">
-<h2>Portofolio</h2>
+<h2><i class="fa-solid fa-briefcase-medical"></i> Portofolio</h2>
 
-<div class="project-main" onclick="openPopup('Login QR','Fitur scan barcode untuk login user')">
-<h3>QR Login</h3>
+<div class="project-main" onclick="openPopup('QR Login','Scan barcode untuk login')">
+<i class="fa-solid fa-barcode"></i> QR Login
 </div>
 
-<div class="project-main" onclick="openPopup('Jadwal Otomatis','Sistem mengatur jadwal minum obat')">
-<h3>Jadwal</h3>
+<div class="project-main" onclick="openPopup('Jadwal','Atur jadwal otomatis')">
+<i class="fa-solid fa-clock"></i> Jadwal
 </div>
 
-<div class="project-main" onclick="openPopup('Tracking','Monitoring konsumsi obat harian')">
-<h3>Tracking</h3>
+<div class="project-main" onclick="openPopup('Tracking','Monitoring obat')">
+<i class="fa-solid fa-check"></i> Tracking
 </div>
 
-<div class="project-main" onclick="openPopup('Export Excel','Data bisa diexport ke Excel')">
-<h3>Export</h3>
+<div class="project-main" onclick="openPopup('Export','Export ke Excel')">
+<i class="fa-solid fa-file-excel"></i> Export
 </div>
 
 </div>
@@ -163,50 +244,54 @@ line-height:1.8;
 </div>
 
 <div class="sidebar">
-<div class="side-card">Kesehatan Digital</div>
-<div class="mini-box">Tim: 4 Orang</div>
+<div class="side-card"><i class="fa-solid fa-heart"></i> Kesehatan Digital</div>
+<div class="side-card"><i class="fa-solid fa-pills"></i> Manajemen Obat</div>
+<div class="side-card"><i class="fa-solid fa-chart-line"></i> Tracking</div>
+
+<div class="mini-box">
+<b><i class="fa-solid fa-info-circle"></i> Info</b><br>
+Tim: 4 Orang<br>
+Status: Aktif
+</div>
+
+<div class="mini-box">
+<b><i class="fa-solid fa-phone"></i> Kontak</b><br>
+medminder@mail.com
+</div>
 </div>
 
 </div>
 
-<!-- EXTRA BIAR SCROLL PANJANG -->
 <div class="extra">
-<h2>Informasi Tambahan</h2>
-<p>
-Aplikasi MedMinder dirancang untuk membantu pengguna dalam mengelola konsumsi obat secara efisien.
-Dengan sistem otomatis, pengguna dapat memantau jadwal harian dengan lebih mudah dan terstruktur.
-</p>
-<p>
-Pengembangan aplikasi ini menggunakan pendekatan berbasis sistem CLI dan integrasi data menggunakan file Excel.
-</p>
+<h2><i class="fa-solid fa-notes-medical"></i> Informasi Tambahan</h2>
+<p>Aplikasi ini membantu monitoring obat harian secara efisien.</p>
+<p>Dikembangkan dengan sistem berbasis CLI dan Excel.</p>
 </div>
 
-<!-- FLOAT BUTTON -->
-<div class="float-btn" onclick="openPopup('Info','Ini tombol cepat popup')">
-🔔
+<div class="float-btn" onclick="openPopup('Info','Popup cepat')">
+<i class="fa-solid fa-bell"></i>
 </div>
 
-<!-- POPUP -->
 <div class="popup" id="popup">
 <div class="popup-content">
-<span class="close" onclick="closePopup()">X</span>
+<span onclick="closePopup()">X</span>
 <h3 id="popTitle"></h3>
 <p id="popDesc"></p>
 </div>
 </div>
 
 <footer>
-MedMinder Project | Informatika 2026
+<i class="fa-solid fa-heart-pulse"></i> MedMinder 2026
 </footer>
 
 <script>
-function openPopup(title,desc){
+function openPopup(t,d){
 document.getElementById("popup").style.display="flex";
-document.getElementById("popTitle").innerText=title;
-document.getElementById("popDesc").innerText=desc;
+popTitle.innerText=t;
+popDesc.innerText=d;
 }
 function closePopup(){
-document.getElementById("popup").style.display="none";
+popup.style.display="none";
 }
 </script>
 
