@@ -22,6 +22,12 @@ body{
     font-family:'Inter',sans-serif;
     background:var(--primary);
     color:var(--text);
+    scroll-behavior:smooth;
+}
+
+/* FIX SCROLL BIAR GA KETUTUP NAV */
+section, .section {
+    scroll-margin-top: 80px;
 }
 
 /* NAV */
@@ -36,18 +42,41 @@ gap:30px;
 border-bottom:2px solid var(--accent);
 z-index:999;
 }
-nav a{color:var(--text);text-decoration:none;}
+nav a{color:var(--text);text-decoration:none;font-weight:500;}
 nav i{color:var(--accent);}
 
-/* FLOATING */
+/* FLOATING SUPER RAMAI */
 .floating i{
 position:absolute;
 color:var(--accent);
-opacity:0.25;
-animation:float 6s infinite;
-font-size:40px;
+opacity:0.22;
+text-shadow:0 0 12px rgba(76,175,125,0.5);
+animation:float 6s infinite ease-in-out;
 }
-@keyframes float{50%{transform:translateY(-20px);}}
+
+/* POSISI RANDOM BIAR HIDUP */
+.floating i:nth-child(1){top:5%;left:5%;font-size:40px;}
+.floating i:nth-child(2){top:15%;left:20%;font-size:30px;}
+.floating i:nth-child(3){top:30%;left:10%;font-size:35px;}
+.floating i:nth-child(4){top:60%;left:15%;font-size:28px;}
+.floating i:nth-child(5){top:10%;right:5%;font-size:40px;}
+.floating i:nth-child(6){top:25%;right:15%;font-size:30px;}
+.floating i:nth-child(7){top:45%;right:10%;font-size:35px;}
+.floating i:nth-child(8){bottom:10%;right:5%;font-size:30px;}
+.floating i:nth-child(9){bottom:5%;left:40%;font-size:25px;}
+.floating i:nth-child(10){bottom:30%;left:30%;font-size:30px;}
+.floating i:nth-child(11){top:70%;right:30%;font-size:25px;}
+.floating i:nth-child(12){top:50%;left:50%;font-size:22px;}
+.floating i:nth-child(13){top:80%;left:20%;font-size:26px;}
+.floating i:nth-child(14){bottom:20%;right:25%;font-size:24px;}
+.floating i:nth-child(15){top:40%;left:70%;font-size:30px;}
+.floating i:nth-child(16){bottom:15%;left:10%;font-size:28px;}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
+}
 
 /* HEADER */
 header{text-align:center;padding:25px;border-bottom:2px solid var(--accent);}
@@ -65,7 +94,7 @@ header h1{color:var(--accent);}
 .section{margin-bottom:35px;}
 .section h2{color:var(--accent);}
 
-/* ABOUT */
+/* ABOUT PANJANGIN */
 .about-text{
 background:white;
 padding:15px;
@@ -102,36 +131,14 @@ border-radius:10px;
 border:1px solid var(--accent);
 }
 
-/* POPUP RAMAI */
-.popup{
-display:none;
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:rgba(0,0,0,0.5);
-justify-content:center;
-align-items:center;
-}
-.popup-content{
-background:white;
-padding:20px;
-border-radius:12px;
-width:320px;
-border-top:6px solid var(--accent);
-}
-.popup-content h3{color:var(--accent);}
-.popup-content i{color:var(--accent);}
-.close{float:right;cursor:pointer;}
-
-/* EXTRA HIJAU */
+/* EXTRA */
 .extra{
 padding:40px;
 background:var(--secondary);
 line-height:1.8;
 border-top:2px solid var(--accent);
 }
-.extra h2{color:var(--accent);}
-.extra i{color:var(--accent);}
+
 .divider{
 height:2px;
 background:var(--accent);
@@ -151,13 +158,27 @@ border-radius:50%;
 cursor:pointer;
 }
 
-/* FOOTER */
-footer{text-align:center;padding:20px;background:var(--secondary);}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-.container{grid-template-columns:1fr;}
+/* POPUP */
+.popup{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.5);
+justify-content:center;
+align-items:center;
 }
+.popup-content{
+background:white;
+padding:20px;
+border-radius:12px;
+width:320px;
+border-top:6px solid var(--accent);
+}
+.popup-content h3{color:var(--accent);}
+.close{float:right;cursor:pointer;}
+
+footer{text-align:center;padding:20px;background:var(--secondary);}
 </style>
 </head>
 
@@ -168,14 +189,24 @@ footer{text-align:center;padding:20px;background:var(--secondary);}
 <a href="#portfolio"><i class="fa-solid fa-briefcase-medical"></i> Portofolio</a>
 </nav>
 
-<!-- FLOATING -->
+<!-- FLOATING SUPER RAMAI -->
 <div class="floating">
 <i class="fa-solid fa-heart-pulse"></i>
 <i class="fa-solid fa-pills"></i>
 <i class="fa-solid fa-stethoscope"></i>
-<i class="fa-solid fa-capsules"></i>
+<i class="fa-solid fa-kit-medical"></i>
 <i class="fa-solid fa-syringe"></i>
+<i class="fa-solid fa-capsules"></i>
+<i class="fa-solid fa-notes-medical"></i>
+<i class="fa-solid fa-user-doctor"></i>
 <i class="fa-solid fa-heart"></i>
+<i class="fa-solid fa-briefcase-medical"></i>
+<i class="fa-solid fa-heart-pulse"></i>
+<i class="fa-solid fa-pills"></i>
+<i class="fa-solid fa-stethoscope"></i>
+<i class="fa-solid fa-heart"></i>
+<i class="fa-solid fa-capsules"></i>
+<i class="fa-solid fa-user-doctor"></i>
 </div>
 
 <header>
@@ -198,8 +229,12 @@ footer{text-align:center;padding:20px;background:var(--secondary);}
 <h2><i class="fa-solid fa-users"></i> Tentang Kami</h2>
 <div class="about-text">
 Kami adalah tim mahasiswa informatika yang memiliki fokus pada pengembangan sistem berbasis teknologi untuk membantu aktivitas sehari-hari, khususnya dalam bidang kesehatan digital. 
-Melalui proyek MedMinder, kami berupaya menghadirkan solusi yang mampu membantu pengguna dalam mengatur konsumsi obat secara terjadwal, terstruktur, dan efisien. 
-Aplikasi ini dirancang dengan mempertimbangkan kemudahan penggunaan serta efisiensi dalam pencatatan data, sehingga pengguna dapat dengan mudah memantau riwayat konsumsi obat dan menjaga konsistensi dalam menjaga kesehatan.
+Melalui proyek MedMinder, kami berupaya menghadirkan solusi yang mampu membantu pengguna dalam mengatur konsumsi obat secara terjadwal, terstruktur, dan efisien.
+
+Aplikasi ini dirancang dengan mempertimbangkan kemudahan penggunaan (user friendly) serta efisiensi dalam pencatatan data, sehingga pengguna dapat dengan mudah memantau riwayat konsumsi obat. 
+Selain itu, sistem ini juga bertujuan untuk meningkatkan kesadaran dan kedisiplinan pengguna dalam menjaga kesehatan melalui pendekatan digital yang praktis dan modern.
+
+Dengan adanya fitur penjadwalan otomatis, monitoring konsumsi, serta ekspor data, MedMinder diharapkan dapat menjadi solusi yang relevan dan bermanfaat bagi masyarakat dalam mengelola kesehatan secara mandiri.
 </div>
 </div>
 
@@ -214,11 +249,11 @@ Aplikasi ini dirancang dengan mempertimbangkan kemudahan penggunaan serta efisie
 <i class="fa-solid fa-clock"></i> Jadwal
 </div>
 
-<div class="project-main" onclick="openPopup('Tracking','Pengguna dapat melakukan monitoring terhadap konsumsi obat harian secara real-time melalui sistem checklist.')">
+<div class="project-main" onclick="openPopup('Tracking','Pengguna dapat melakukan monitoring terhadap konsumsi obat harian secara real-time.')">
 <i class="fa-solid fa-check"></i> Tracking
 </div>
 
-<div class="project-main" onclick="openPopup('Export Data','Data konsumsi obat dapat diekspor ke dalam format Excel untuk dokumentasi dan analisis.')">
+<div class="project-main" onclick="openPopup('Export Data','Data konsumsi obat dapat diekspor ke dalam format Excel untuk dokumentasi.')">
 <i class="fa-solid fa-file-excel"></i> Export
 </div>
 
@@ -244,30 +279,19 @@ medminder@mail.com
 
 </div>
 
-<!-- EXTRA PANJANG -->
 <div class="extra">
-
 <h2><i class="fa-solid fa-notes-medical"></i> Informasi Tambahan</h2>
-<p>
-MedMinder merupakan aplikasi berbasis sistem yang dikembangkan untuk membantu pengguna dalam mengelola konsumsi obat secara lebih terstruktur dan efisien...
-</p>
+<p>MedMinder merupakan aplikasi berbasis sistem untuk membantu pengelolaan obat secara terstruktur...</p>
 
 <div class="divider"></div>
 
 <h2><i class="fa-solid fa-capsules"></i> Fitur Utama</h2>
-<p><i class="fa-solid fa-barcode"></i> Sistem login menggunakan QR Code</p>
-<p><i class="fa-solid fa-clock"></i> Penjadwalan otomatis</p>
-<p><i class="fa-solid fa-check-circle"></i> Monitoring konsumsi obat</p>
-
-<div class="divider"></div>
-
-<h2><i class="fa-solid fa-star"></i> Keunggulan</h2>
-<p><i class="fa-solid fa-circle-check"></i> Mudah digunakan</p>
-<p><i class="fa-solid fa-circle-check"></i> Sistem efisien</p>
+<p><i class="fa-solid fa-barcode"></i> QR Login</p>
+<p><i class="fa-solid fa-clock"></i> Jadwal</p>
 
 </div>
 
-<div class="float-btn" onclick="openPopup('Informasi','Popup tambahan untuk memberikan informasi cepat.')">
+<div class="float-btn" onclick="openPopup('Info','Popup informasi tambahan')">
 <i class="fa-solid fa-bell"></i>
 </div>
 
