@@ -10,10 +10,10 @@
 
 <style>
 :root {
-    --primary: #F7FAF9;
-    --secondary: #EAF7F0;
-    --accent: #3FAE7C;
-    --text: #22352F;
+    --primary: #FFF7F2;   
+    --secondary: #FFE8D9; 
+    --accent: #F4A261;   
+    --text: #4A2E2B;  
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -44,7 +44,7 @@ nav i{color:var(--accent);}
 position:absolute;
 color:var(--accent);
 opacity:0.22;
-text-shadow:0 0 10px rgba(63,174,124,0.4);
+text-shadow:0 0 10px rgba(244,162,97,0.4);
 animation:float 6s infinite ease-in-out;
 }
 .floating i:nth-child(1){top:5%;left:5%;font-size:40px;}
@@ -144,7 +144,7 @@ border:1px solid var(--accent);
 font-size:13px;
 }
 
-/* EXTRA (DI RAMAIIN BANGET) */
+/* EXTRA */
 .extra{
 padding:60px 80px;
 background:var(--secondary);
@@ -165,7 +165,6 @@ border-radius:10px;
 border:1px solid var(--accent);
 margin-bottom:25px;
 line-height:1.8;
-box-shadow:0 5px 10px rgba(0,0,0,0.05);
 }
 
 .extra-box p{
@@ -223,6 +222,9 @@ background:var(--secondary);
 border-top:2px solid var(--accent);
 }
 
+@media(max-width:768px){
+.container{grid-template-columns:1fr;}
+}
 </style>
 </head>
 
