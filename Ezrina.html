@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PinkFlix Movie Tracker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#fff5f8;
+    --card:#ffffff;
+    --primary:#ff8fbc;
+    --primary-dark:#ff6aa5;
+    --secondary:#ffe1ec;
+    --text:#444;
+    --shadow:0 5px 15px rgba(255,143,188,0.2);
+}
+
+.dark{
+    --bg:#1f1f2e;
+    --card:#2b2b3d;
+    --secondary:#3a3a50;
+    --text:#f5f5f5;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    padding:30px;
+    transition:.3s;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.header h1{
+    color:var(--primary-dark);
+}
+
+.dark-btn{
+    border:none;
+    background:var(--primary);
+    color:white;
+    padding:10px 15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.stat{
+    background:var(--card);
+    padding:20px;
+    border-radius:15px;
+    box-shadow:var(--shadow);
+    text-align:center;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:20px;
+}
+
+.card{
+    background:var(--card);
+    padding:20px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.card h2{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+}
+
+input, select{
+    width:100%;
+    padding:12px;
+    border:2px solid #ffd1e2;
+    border-radius:12px;
+    outline:none;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+button{
+    border:none;
+    padding:12px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.save{
+    background:var(--primary);
+    color:white;
+    flex:1;
+}
+
+.reset{
+    background:#ddd;
+    flex:1;
+}
+
+.search{
+    margin-bottom:15px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:12px;
+    text-align:center;
+}
+
+th{
+    background:var(--secondary);
+}
+
+tr:hover{
+    background:rgba(255,143,188,.1);
+}
+
+.edit{
+    background:#ffd166;
+}
+
+.delete{
+    background:#ef476f;
+    color:white;
+}
+
+.badge{
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.belum{
+    background:#ffd6e7;
+}
+
+.sedang{
+    background:#e3d5ff;
+}
+
+.selesai{
+    background:#caffbf;
+}
+
+.stars{
+    display:flex;
+    gap:5px;
+    font-size:25px;
+    cursor:pointer;
+    margin-top:5px;
+}
+
+.star{
+    color:#ddd;
+}
+
+.star.active{
+    color:gold;
+}
+
+.toast{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:var(--primary);
+    color:white;
+    padding:15px 20px;
+    border-radius:10px;
+    display:none;
+}
+
+@media(max-width:900px){
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<div class="header">
+    <div>
+        <h1>🎬 PinkFlix Movie Tracker</h1>
+        <p>Kelola film favoritmu dengan gaya pastel ✨</p>
+    </div>
+
+    <button class="dark-btn" onclick="toggleDark()">
+        🌙 Dark Mode
+    </button>
+</div>
+
+<div class="stats">
+    <div class="stat">
+        <h2 id="totalMovie">0</h2>
+        <p>Total Film</p>
+    </div>
+
+    <div class="stat">
+        <h2 id="doneMovie">0</h2>
+        <p>Selesai</p>
+    </div>
+
+    <div class="stat">
+        <h2 id="watchingMovie">0</h2>
+        <p>Sedang Ditonton</p>
+    </div>
+
+    <div class="stat">
+        <h2 id="wishMovie">0</h2>
+        <p>Wishlist</p>
+    </div>
+</div>
+
+<div class="container">
+
+<div class="card">
+<h2>➕ Tambah Film</h2>
+
+<label>Judul Film</label>
+<input type="text" id="title">
+
+<label>Genre</label>
+<input type="text" id="genre">
+
+<label>Status</label>
+<select id="status">
+    <option>Belum Ditonton</option>
+    <option>Sedang Ditonton</option>
+    <option>Selesai</option>
+</select>
+
+<label>Rating</label>
+
+<div class="stars">
+    <span class="star" onclick="setRating(1)">★</span>
+    <span class="star" onclick="setRating(2)">★</span>
+    <span class="star" onclick="setRating(3)">★</span>
+    <span class="star" onclick="setRating(4)">★</span>
+    <span class="star" onclick="setRating(5)">★</span>
+</div>
+
+<div class="buttons">
+    <button class="save" onclick="saveMovie()">💾 Simpan</button>
+    <button class="reset" onclick="resetForm()">↺ Reset</button>
+</div>
+
+</div>
+
+<div class="card">
+
+<input
+type="text"
+id="search"
+class="search"
+placeholder="🔍 Cari film..."
+onkeyup="renderMovies()">
+
+<table>
+<thead>
+<tr>
+<th>Judul</th>
+<th>Genre</th>
+<th>Rating</th>
+<th>Status</th>
+<th>Aksi</th>
+</tr>
+</thead>
+
+<tbody id="movieTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+let movies = JSON.parse(localStorage.getItem("movies")) || [];
+let rating = 0;
+let editIndex = -1;
+
+function setRating(value){
+    rating = value;
+
+    document.querySelectorAll(".star")
+    .forEach((star,index)=>{
+        star.classList.toggle("active", index < value);
+    });
+}
+
+function saveMovie(){
+
+    const title = document.getElementById("title").value;
+    const genre = document.getElementById("genre").value;
+    const status = document.getElementById("status").value;
+
+    if(!title || !genre){
+        showToast("Isi semua data!");
+        return;
+    }
+
+    const data = {
+        title,
+        genre,
+        rating,
+        status
+    };
+
+    if(editIndex === -1){
+        movies.push(data);
+        showToast("Film berhasil ditambahkan 🎉");
+    }else{
+        movies[editIndex] = data;
+        showToast("Film berhasil diupdate ✨");
+    }
+
+    localStorage.setItem("movies", JSON.stringify(movies));
+
+    resetForm();
+    renderMovies();
+}
+
+function renderMovies(){
+
+    const keyword = document
+    .getElementById("search")
+    .value
+    .toLowerCase();
+
+    let html = "";
+
+    movies.forEach((movie,index)=>{
+
+        if(!movie.title.toLowerCase().includes(keyword))
+        return;
+
+        let badge = "";
+
+        if(movie.status==="Belum Ditonton")
+            badge='<span class="badge belum">💖 Wishlist</span>';
+
+        if(movie.status==="Sedang Ditonton")
+            badge='<span class="badge sedang">🎬 Watching</span>';
+
+        if(movie.status==="Selesai")
+            badge='<span class="badge selesai">✅ Done</span>';
+
+        html += `
+        <tr>
+            <td>${movie.title}</td>
+            <td>${movie.genre}</td>
+            <td>${"⭐".repeat(movie.rating)}</td>
+            <td>${badge}</td>
+            <td>
+                <button class="edit" onclick="editMovie(${index})">✏️</button>
+                <button class="delete" onclick="deleteMovie(${index})">🗑️</button>
+            </td>
+        </tr>
+        `;
+    });
+
+    document.getElementById("movieTable").innerHTML = html;
+
+    updateStats();
+}
+
+function editMovie(index){
+
+    const movie = movies[index];
+
+    document.getElementById("title").value = movie.title;
+    document.getElementById("genre").value = movie.genre;
+    document.getElementById("status").value = movie.status;
+
+    setRating(movie.rating);
+
+    editIndex = index;
+}
+
+function deleteMovie(index){
+
+    if(confirm("Hapus film ini?")){
+        movies.splice(index,1);
+
+        localStorage.setItem(
+        "movies",
+        JSON.stringify(movies));
+
+        renderMovies();
+
+        showToast("Film berhasil dihapus 🗑️");
+    }
+}
+
+function resetForm(){
+
+    document.getElementById("title").value="";
+    document.getElementById("genre").value="";
+    document.getElementById("status").selectedIndex=0;
+
+    rating=0;
+    editIndex=-1;
+
+    document.querySelectorAll(".star")
+    .forEach(star=>star.classList.remove("active"));
+}
+
+function updateStats(){
+
+    document.getElementById("totalMovie").innerText =
+    movies.length;
+
+    document.getElementById("doneMovie").innerText =
+    movies.filter(m=>m.status==="Selesai").length;
+
+    document.getElementById("watchingMovie").innerText =
+    movies.filter(m=>m.status==="Sedang Ditonton").length;
+
+    document.getElementById("wishMovie").innerText =
+    movies.filter(m=>m.status==="Belum Ditonton").length;
+}
+
+function showToast(msg){
+
+    const toast = document.getElementById("toast");
+
+    toast.innerText = msg;
+    toast.style.display = "block";
+
+    setTimeout(()=>{
+        toast.style.display = "none";
+    },2000);
+}
+
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+
+renderMovies();
+
+</script>
+
+</body>
+</html>
